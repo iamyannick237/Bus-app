@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "arrets",
+  "info": {
+    "singularName": "arret",
+    "pluralName": "arrets",
+    "displayName": "ARRET"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "adresse": {
+      "type": "text"
+    },
+    "ville": {
+      "type": "string",
+      "required": true
+    },
+    "codePostale": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "iteneraire": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::iteneraire.iteneraire",
+      "inversedBy": "arrets"
+    }
+  }
+}

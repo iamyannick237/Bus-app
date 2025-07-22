@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "TICKET"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "numeroTicket": {
+      "type": "string"
+    },
+    "statut": {
+      "type": "string"
+    },
+    "dateEmission": {
+      "type": "datetime"
+    },
+    "qrCode": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "reservation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::reservation.reservation",
+      "inversedBy": "tickets"
+    }
+  }
+}

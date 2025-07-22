@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "buses",
+  "info": {
+    "singularName": "bus",
+    "pluralName": "buses",
+    "displayName": "BUS"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "immatruclation": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "marque": {
+      "type": "string"
+    },
+    "modele": {
+      "type": "string"
+    },
+    "capacite": {
+      "type": "integer"
+    },
+    "dateMiseEnService": {
+      "type": "date"
+    },
+    "statut": {
+      "type": "string"
+    },
+    "agences": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::agence.agence",
+      "inversedBy": "buses"
+    }
+  }
+}

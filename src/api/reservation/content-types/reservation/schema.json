@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reservations",
+  "info": {
+    "singularName": "reservation",
+    "pluralName": "reservations",
+    "displayName": "RESERVATION"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dateReservation": {
+      "type": "datetime"
+    },
+    "statut": {
+      "type": "string"
+    },
+    "montantTotal": {
+      "type": "decimal"
+    },
+    "agence": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agence.agence"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "reservations"
+    },
+    "voyages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::voyage.voyage",
+      "mappedBy": "reservation"
+    },
+    "paiement": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::paiement.paiement",
+      "mappedBy": "reservation"
+    },
+    "tickets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ticket.ticket",
+      "mappedBy": "reservation"
+    }
+  }
+}

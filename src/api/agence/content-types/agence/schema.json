@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agences",
+  "info": {
+    "singularName": "agence",
+    "pluralName": "agences",
+    "displayName": "AGENCE"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "siret": {
+      "type": "string"
+    },
+    "telephone": {
+      "type": "integer"
+    },
+    "adressse": {
+      "type": "text"
+    },
+    "trajets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::trajet.trajet",
+      "mappedBy": "id_agence"
+    },
+    "buses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bus.bus",
+      "mappedBy": "agences"
+    },
+    "siege": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::siege.siege",
+      "mappedBy": "agence"
+    }
+  }
+}

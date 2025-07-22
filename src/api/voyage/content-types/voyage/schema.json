@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "voyages",
+  "info": {
+    "singularName": "voyage",
+    "pluralName": "voyages",
+    "displayName": "VOYAGE"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dateDeVoyage": {
+      "type": "date"
+    },
+    "statut": {
+      "type": "string"
+    },
+    "placeDisponible": {
+      "type": "integer"
+    },
+    "id_trajets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::trajet.trajet",
+      "mappedBy": "voyage"
+    },
+    "bus": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bus.bus"
+    },
+    "reservation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::reservation.reservation",
+      "inversedBy": "voyages"
+    }
+  }
+}

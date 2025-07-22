@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sieges",
+  "info": {
+    "singularName": "siege",
+    "pluralName": "sieges",
+    "displayName": "SIEGE"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "umeriSiege": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "occupe": {
+      "type": "boolean",
+      "required": true
+    },
+    "supplementPrix": {
+      "type": "biginteger"
+    },
+    "agence": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agence.agence",
+      "inversedBy": "siege"
+    }
+  }
+}

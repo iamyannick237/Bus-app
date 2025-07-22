@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "iteneraires",
+  "info": {
+    "singularName": "iteneraire",
+    "pluralName": "iteneraires",
+    "displayName": "ITENERAIRE"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderarret": {
+      "type": "integer"
+    },
+    "heureArrivee": {
+      "type": "time"
+    },
+    "heureDepart": {
+      "type": "time"
+    },
+    "arrets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::arret.arret",
+      "mappedBy": "iteneraire"
+    },
+    "trajet": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::trajet.trajet"
+    }
+  }
+}

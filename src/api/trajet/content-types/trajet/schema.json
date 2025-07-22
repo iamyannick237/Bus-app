@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trajets",
+  "info": {
+    "singularName": "trajet",
+    "pluralName": "trajets",
+    "displayName": "TRAJET"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "villeDepart": {
+      "type": "string",
+      "required": true
+    },
+    "villeDarrivee": {
+      "type": "string",
+      "required": true
+    },
+    "heureDepart": {
+      "type": "time",
+      "required": true
+    },
+    "heureArrivee": {
+      "type": "time"
+    },
+    "prix": {
+      "type": "decimal"
+    },
+    "statut": {
+      "type": "string"
+    },
+    "dureeTrajet": {
+      "type": "integer"
+    },
+    "id_agence": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::agence.agence",
+      "inversedBy": "trajets"
+    },
+    "voyage": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::voyage.voyage",
+      "inversedBy": "id_trajets"
+    }
+  }
+}
