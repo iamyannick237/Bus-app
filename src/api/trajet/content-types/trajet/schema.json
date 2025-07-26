@@ -19,6 +19,10 @@
       "type": "string",
       "required": true
     },
+    "date": {
+      "type": "date",
+      "required": true
+    },
     "heureDepart": {
       "type": "time",
       "required": true
